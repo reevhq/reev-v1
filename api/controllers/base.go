@@ -20,7 +20,7 @@ type Server struct {
 }
 
 // Initialize inits the server
-func (server *Server) Initialize(Dbdriver, DbPassword, DbPort, DbHost, DbName string) {
+func (server *Server) Initialize(Dbdriver, DbUser, DbPassword, DbPort, DbHost, DbName string) {
 	var err error
 
 	if Dbdriver == "mysql" {
@@ -30,7 +30,7 @@ func (server *Server) Initialize(Dbdriver, DbPassword, DbPort, DbHost, DbName st
 			fmt.Printf("Cannot connect %s database", Dbdriver)
 			log.Fatal("This is the error:", err)
 		} else {
-			fmt.Printf("Database connected successfully", Dbdriver)
+			fmt.Printf("%s Database connected successfully", Dbdriver)
 		}
 	}
 
